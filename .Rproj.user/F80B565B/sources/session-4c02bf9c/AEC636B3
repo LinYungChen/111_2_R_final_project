@@ -3,9 +3,9 @@
     "path": "~/GitHub/111_2_R_final_project/111_2_final_project_analysis.Rmd",
     "project_path": null,
     "type": "r_markdown",
-    "hash": "0",
+    "hash": "4161235911",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1683706583649.0,
     "source_on_save": false,
     "relative_order": 2,
@@ -22,11 +22,11 @@
         "rmdVisualModeLocation": "108:0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1683706679,
+    "lastKnownWriteTime": 1683707404,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1683706726780,
+    "last_content_update": 1683707404031,
     "read_only": false,
     "read_only_alternatives": []
 }
