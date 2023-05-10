@@ -1,0 +1,32 @@
+{
+    "id": "AEC636B3",
+    "path": "~/GitHub/111_2_R_final_project/111_2_final_project_analysis.Rmd",
+    "project_path": null,
+    "type": "r_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": true,
+    "created": 1683706583649.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "6,0",
+        "scrollLine": "0",
+        "rmdVisualMode": "false",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "108:0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1683706679,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1683706726780,
+    "read_only": false,
+    "read_only_alternatives": []
+}
