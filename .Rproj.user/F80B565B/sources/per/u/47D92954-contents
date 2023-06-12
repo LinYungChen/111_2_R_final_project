@@ -1,0 +1,14 @@
+# 创建一个数据框
+df <- data.frame(
+  values = c(0.8, 0.4, 0.2, 0.6, 0.1, 0.9)
+)
+
+# 分类并计数
+category <- cut(df$values, breaks = c(0, 0.3, 0.5, 1), labels = c("小于0.3", "0.333-0.5", "大于等于0.5"))
+count <- table(category)
+
+# 创建新的数据框来显示结果
+result_df <- data.frame(Category = as.character(names(count)), Count = as.numeric(count))
+
+# 打印结果数据框
+print(result_df)

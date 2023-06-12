@@ -11,18 +11,65 @@ finalProject <- list()
 
 finalProject$data$filenames <- list.files("./Data")
 
-
 for(i in finalProject$data$filenames)
 {
   finalProject$data[[i]]
   <- read.csv(paste0("./Data/",i))
 }
 
-# Indenpendent Director on the board
+# Indenpendent Director
+
+## get the columns I need and change its name
 
 glimpse(finalProject$data$Board.csv)
 
+finalProject$board_analysis$indenpendent_director <-
+  finalProject$data$Board.csv[,c("公司代號",
+                                  "公司名稱",
+                                  "董事席次.含獨立董事..席.",
+                                  "獨立董事席次.席.",
+                                  "董事出席董事會出席率")]
 
+colnames(finalProject$board_analysis$indenpendent_director) <-
+  c("number","name","all","independent","attend")
+
+view(finalProject$board_analysis$indenpendent_director)
+
+
+## Percentage of Indenpendent
+
+finalProject$board_analysis$indenpendent_director$percentage <-
+  finalProject$board_analysis$indenpendent_director$independent /
+  finalProject$board_analysis$indenpendent_director$all
+
+## Overall situation
+
+finalProject$board_analysis$independentPercentage_category <-
+  cut(finalProject$board_analysis$indenpendent_director$percentage,
+      breaks = c(-Inf, 0.333, 0.499, Inf),
+      labels = c("小於1/3", "未過半但過1/3", "過半數"))
+
+finalProject$board_analysis$independentPercentage_count <-
+  table(finalProject$board_analysis$independentPercentage_category)
+
+finalProject$board_analysis$indenpendentOverall <-
+  data.frame(
+    Category = as.character(names(finalProject$board_analysis$independentPercentage_count)),
+    Count = as.numeric(finalProject$board_analysis$independentPercentage_count)
+    )
+
+finalProject$board_analysis$independentPercentage_sum <-
+  sum(as.numeric(finalProject$board_analysis$independentPercentage_count))
+
+finalProject$board_analysis$indenpendentOverall$Percentage <-
+  sprintf(
+    "%.1f %%", round(finalProject$board_analysis$independentPercentage_count /
+  finalProject$board_analysis$independentPercentage_sum, digits = 2) *100
+  )
+
+view(finalProject$board_analysis$indenpendentOverall)
+
+## The company with "independent" of 50%
 
 
 

@@ -1,0 +1,5 @@
+"0","finalProject$data$filenames <- list.files(""./Data"")"
+"0",""
+"0","for(i in finalProject$data$filenames){"
+"0","  finalProject$data[[i]] <- read.csv(paste0(""./Data/"",i))"
+"0","}"
