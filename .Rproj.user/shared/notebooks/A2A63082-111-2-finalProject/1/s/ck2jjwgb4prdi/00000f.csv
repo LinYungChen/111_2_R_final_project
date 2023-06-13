@@ -10,5 +10,5 @@
 "0",""
 "0","finalProject$board_analysis$indenpendent_director$percentage <- finalProject$board_analysis$indenpendent_director$independent / finalProject$board_analysis$indenpendent_director$all"
 "0",""
-"0","view(finalProject$board_analysis$indenpendent_director)"
+"0","View(finalProject$board_analysis$indenpendent_director)"
 "0",""

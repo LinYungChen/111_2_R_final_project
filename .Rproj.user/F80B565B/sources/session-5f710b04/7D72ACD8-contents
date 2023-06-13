@@ -1,53 +1,51 @@
----
-title: "111_2_final_project_analysis"
-author: "JackLin"
-date: "2023-05-10"
-output: html_document
----
+
+
 # Environment setting
 
-```{r}
 install.packages("tidyverse")
 library(readr)
 library(tidyverse)
 finalProject <- list()
-```
 
 # Import Data
 
-```{r}
 finalProject$data$filenames <- list.files("./Data")
 
-for(i in finalProject$data$filenames){
-  finalProject$data[[i]] <- read.csv(paste0("./Data/",i))
+for(i in finalProject$data$filenames)
+{
+  finalProject$data[[i]]
+  <- read.csv(paste0("./Data/",i))
 }
-```
 
-# Indenpendent Director on the board
+# Indenpendent Director
 
-## Get the columns I need and change its name
+## get the columns I need and change its name
 
-```{r}
+glimpse(finalProject$data$Board.csv)
+
 finalProject$board_analysis$indenpendent_director <-
   finalProject$data$Board.csv[,c("公司代號",
-                    "公司名稱","董事席次.含獨立董事..席.",
-                    "獨立董事席次.席.",
-                    "董事出席董事會出席率")]
+                                  "公司名稱",
+                                  "董事席次.含獨立董事..席.",
+                                  "獨立董事席次.席.",
+                                  "董事出席董事會出席率")]
 
-colnames(finalProject$board_analysis$indenpendent_director) <- c("number","name","all","independent","attend")
+colnames(finalProject$board_analysis$indenpendent_director) <-
+  c("number","name","all","independent","attend")
 
-### Percentage of Indenpendent
+view(finalProject$board_analysis$indenpendent_director)
 
-finalProject$board_analysis$indenpendent_director$percentage <- finalProject$board_analysis$indenpendent_director$independent / finalProject$board_analysis$indenpendent_director$all
 
-View(finalProject$board_analysis$indenpendent_director)
+## Percentage of Indenpendent
 
-```
+finalProject$board_analysis$indenpendent_director$percentage <-
+  finalProject$board_analysis$indenpendent_director$independent /
+  finalProject$board_analysis$indenpendent_director$all
 
-## Ovrall situation
+## Overall situation
 
-```{r}
-finalProject$board_analysis$independentPercentage_category <- cut(finalProject$board_analysis$indenpendent_director$percentage,
+finalProject$board_analysis$independentPercentage_category <-
+  cut(finalProject$board_analysis$indenpendent_director$percentage,
       breaks = c(-Inf, 0.333, 0.499, Inf),
       labels = c("小於1/3", "未過半但過1/3", "過半數"))
 
@@ -56,54 +54,48 @@ finalProject$board_analysis$independentPercentage_count <-
 
 finalProject$board_analysis$indenpendentOverall <-
   data.frame(
-    Category = as.character(names(finalProject$board_analysis$independentPercentage_count)), 
+    Category = as.character(names(finalProject$board_analysis$independentPercentage_count)),
     Count = as.numeric(finalProject$board_analysis$independentPercentage_count)
     )
 
-### Calculate the proportion of each category
-
-finalProject$board_analysis$independentPercentage_sum <- 
+finalProject$board_analysis$independentPercentage_sum <-
   sum(as.numeric(finalProject$board_analysis$independentPercentage_count))
 
-finalProject$board_analysis$indenpendentOverall$Percentage <- 
+finalProject$board_analysis$indenpendentOverall$Percentage <-
   sprintf(
-    "%.1f %%", round(finalProject$board_analysis$independentPercentage_count / 
+    "%.1f %%", round(finalProject$board_analysis$independentPercentage_count /
   finalProject$board_analysis$independentPercentage_sum, digits = 2) *100
   )
 
 View(finalProject$board_analysis$indenpendentOverall)
-```
 
-## The company with "independent" more than 50%
+## The company with "independent" of 50%
 
-```{r}
 finalProject$board_analysis$indenpendentHalf <- 
   finalProject$board_analysis$indenpendent_director[
     finalProject$board_analysis$indenpendent_director$percentage > 0.499, 
   ]
 
 View(finalProject$board_analysis$indenpendentHalf)
-```
 
 # Femele Director
 
-## Get the columns I need, parsing,and change columns name
+## get the columns I need, parsing,and change columns name
 
-```{r}
+glimpse(finalProject$data$Board.csv)
+
 finalProject$board_analysis$femele_director <-
-  finalProject$data$Board.csv[,c("公司代號","公司名稱",
-                              "董事席次.含獨立董事..席.",
-                              "女性董事席次及比率.席")]
+  finalProject$data$Board.csv[,c("公司代號",
+                                 "公司名稱",
+                                 "董事席次.含獨立董事..席.",
+                                 "女性董事席次及比率.席")]
 
 colnames(finalProject$board_analysis$femele_director) <-
   c("number","name","all","femele")
 
-## parsing to numeric
-
 finalProject$board_analysis$femele_director$femele <-
-  as.numeric(
-    gsub("[^0-9.]", "",
-      finalProject$board_analysis$femele_director$femele))
+  as.numeric(gsub("[^0-9.]", "", 
+                  finalProject$board_analysis$femele_director$femele))
 
 ## Percentage of Femele
 
@@ -114,12 +106,13 @@ finalProject$board_analysis$femele_director$percentage <-
 finalProject$board_analysis$femele_director$percentage <-
   round(finalProject$board_analysis$femele_director$percentage, digits = 2)
 
+finalProject$board_analysis$femele_director$percentage |> 
+  table() |> View()
+
 View(finalProject$board_analysis$femele_director)
-```
 
-## Over situation
+## Overall situation
 
-```{r}
 finalProject$board_analysis$femelePercentage_category <-
   cut(finalProject$board_analysis$femele_director$percentage,
       breaks = c(-Inf, 0 , 0.333, Inf),
@@ -139,13 +132,13 @@ finalProject$board_analysis$femelePercentage_sum <-
 
 finalProject$board_analysis$femeleOverall$Percentage <-
   sprintf(
-    "%.1f %%", round(
-      finalProject$board_analysis$femelePercentage_count / finalProject$board_analysis$femelePercentage_sum, 
-      digits = 2) *100
+    "%.1f %%", round(finalProject$board_analysis$femelePercentage_count /
+                       finalProject$board_analysis$femelePercentage_sum, digits = 2) *100
   )
 
 View(finalProject$board_analysis$femeleOverall)
-```
 
-## The company with "femele" more than 1/3
+
+
+
 
