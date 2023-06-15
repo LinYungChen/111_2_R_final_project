@@ -327,7 +327,42 @@ finalProject$humanResource_analysis$femaleManagerOverall$Percentage <-
 View(finalProject$humanResource_analysis$femaleManagerOverall)
 ```
 
-## Compare to the performance of female director
+
+## How the performance of femele manager percentage with female director >1/3
+
+```{r}
+finalProject$humanResource_analysis$FemalePerformanceWithFemaleDirectorGood <-
+  finalProject$board_analysis$female_director %>%
+  inner_join(finalProject$humanResource_analysis$all, by = "number") %>%
+  filter(finalProject$board_analysis$female_director$percentage > 0.333)
+
+finalProject$humanResource_analysis$FemalePerformanceWithFemaleDirectorGood_category <-
+  cut(finalProject$humanResource_analysis$FemalePerformanceWithFemaleDirectorGood$female_manager_percentage,
+      breaks = c(-Inf, 0 , 0.28 , 0.38, Inf), 
+      labels = c("管理職無女性", "未達29%", "超過29%未達39%", "超過39%"))
+
+finalProject$humanResource_analysis$FemalePerformanceWithFemaleDirectorGood_count <-
+  table(finalProject$humanResource_analysis$FemalePerformanceWithFemaleDirectorGood_category)
+
+finalProject$humanResource_analysis$FemalePerformanceWithFemaleDirectorGood <-
+  data.frame(
+    Category = as.character(names(finalProject$humanResource_analysis$FemalePerformanceWithFemaleDirectorGood_count)), Count = as.numeric(finalProject$humanResource_analysis$FemalePerformanceWithFemaleDirectorGood_count)
+  )
+
+finalProject$humanResource_analysis$FemalePerformanceWithFemaleDirectorGood_sum <-
+  sum(as.numeric(finalProject$humanResource_analysis$FemalePerformanceWithFemaleDirectorGood_count))
+
+finalProject$humanResource_analysis$FemalePerformanceWithFemaleDirectorGood$Percentage <- 
+  sprintf(
+    "%.1f %%", round(finalProject$humanResource_analysis$FemalePerformanceWithFemaleDirectorGood_count / finalProject$humanResource_analysis$FemalePerformanceWithFemaleDirectorGood_sum, digits = 2) *100
+    )
+
+View(finalProject$humanResource_analysis$FemalePerformanceWithFemaleDirectorGood)
+
+```
+
+
+## Compare to the performance of female director with female mananger percentage > 39%
 
 ```{r}
 finalProject$humanResource_analysis$FemalePerformanceWithFemaleManagerGood <-
@@ -360,6 +395,55 @@ View(finalProject$humanResource_analysis$FemalePerformanceWithFemaleManagerGood)
 
 ```
 
+
+# Water resource management analysis
+
+## Get the columns I need, change its name
+
+```{r}
+finalProject$waterResource_analysis$all <-
+  finalProject$data$waterResource.csv[,c("公司代號",
+                                         "公司名稱",
+                                        "取得驗證")]
+
+colnames(finalProject$waterResource_analysis$all) <- 
+  c("number","name","waterManagement_proof")
+
+View(finalProject$waterResource_analysis$all)
+```
+
+## Overall situation
+
+```{r}
+finalProject$waterResource_analysis$dispersion_count <- 
+  table(finalProject$waterResource_analysis$all$waterManagement_proof)
+
+finalProject$waterResource_analysis$dispersion_count <- 
+  as.data.frame(finalProject$waterResource_analysis$dispersion_count) 
+
+colnames(finalProject$waterResource_analysis$dispersion_count) <- c("waterManagement_proof","count")
+
+### Calculate the proportion of each category
+
+finalProject$waterResource_analysis$dispersion_sum <- 
+  sum(finalProject$waterResource_analysis$dispersion_count$count)
+
+finalProject$waterResource_analysis$dispersion_count$percentage <- 
+  sprintf("%.1f %%",
+          round(finalProject$waterResource_analysis$dispersion_count$count / finalProject$waterResource_analysis$dispersion_sum, digits = 2) *100
+  )
+
+finalProject$waterResource_analysis$Dispersion <- 
+  finalProject$waterResource_analysis$dispersion_count[
+    order(finalProject$waterResource_analysis$dispersion_count$count,decreasing = T),
+  ]
+
+finalProject$waterResource_analysis$Dispersion <- 
+  head(finalProject$waterResource_analysis$Dispersion)
+
+View(finalProject$waterResource_analysis$Dispersion)
+
+```
 
 
 

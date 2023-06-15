@@ -3,7 +3,7 @@
     "path": "~/GitHub/111_2_R_final_project/111-2-finalProject.Rmd",
     "project_path": "111-2-finalProject.Rmd",
     "type": "r_markdown",
-    "hash": "863990317",
+    "hash": "1576524086",
     "contents": "",
     "dirty": false,
     "created": 1684917926866.0,
@@ -12,20 +12,21 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "335,82",
-        "scrollLine": "324",
+        "cursorPosition": "447,0",
+        "scrollLine": "331",
         "rmdVisualMode": "false",
         "rmdVisualWrapConfigured": "true",
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
-        "rmdVisualModeLocation": "108:0"
+        "rmdVisualModeLocation": "108:0",
+        "docOutlineSize": "110"
     },
-    "folds": "17|6|23|0|\n51|6|77|0|\n81|6|88|0|\n121|6|146|0|\n150|6|158|0|\n226|6|235|0|\n239|6|257|0|\n262|6|275|0|\n",
-    "lastKnownWriteTime": 1686756196,
+    "folds": "51|6|77|0|\n81|6|88|0|\n150|6|158|0|\n281|6|297|0|\n301|6|327|0|\n332|6|361|0|\n366|6|395|0|\n402|6|412|0|\n416|6|445|0|\n",
+    "lastKnownWriteTime": 1686838123,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1686756196956,
+    "last_content_update": 1686838123683,
     "read_only": false,
     "read_only_alternatives": []
 }
