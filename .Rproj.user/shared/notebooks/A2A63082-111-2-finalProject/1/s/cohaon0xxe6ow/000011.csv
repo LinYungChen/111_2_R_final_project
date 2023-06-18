@@ -1,0 +1,8 @@
+"0","finalProject$CO2_analysis$all <-"
+"0","  finalProject$data$CO2.csv[,c(""公司代號"", ""公司名稱"", "
+"0","                               ""範疇一取得驗證"")]"
+"0",""
+"0","colnames(finalProject$CO2_analysis$all) <- "
+"0","  c(""number"",""name"",""CO2emissionManagement_proof"")"
+"0",""
+"0","View(finalProject$CO2_analysis$all)"

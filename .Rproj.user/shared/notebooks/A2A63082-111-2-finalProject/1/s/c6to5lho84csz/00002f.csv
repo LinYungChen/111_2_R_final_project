@@ -1,6 +1,6 @@
 "0","finalProject$board_analysis$BothIndependentAndFemaleReachStandard <-"
-"0","  finalProject$board_analysis$female_director %>%"
-"0","  inner_join(finalProject$board_analysis$independent_director, by = ""number"") %>%"
+"0","  finalProject$board_analysis$female_director %>% "
+"0","  inner_join(finalProject$board_analysis$independent_director, by = ""number"") %>% "
 "0","  filter(finalProject$board_analysis$female_director$percentage > 0.333, finalProject$board_analysis$independent_director$percentage > 0.5)"
 "0",""
 "0","View(finalProject$board_analysis$BothIndependentAndFemaleReachStandard)"
