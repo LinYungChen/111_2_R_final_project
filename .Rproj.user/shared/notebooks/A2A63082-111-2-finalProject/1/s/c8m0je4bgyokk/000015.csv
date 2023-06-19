@@ -1,0 +1,4 @@
+"0","finalProject$waterResource_analysis$theCompanyGetRelatedISOproof <- "
+"0","  finalProject$waterResource_analysis$all[grep((""46001|14046""),finalProject$waterResource_analysis$all$waterManagement_proof),]"
+"0",""
+"0","View(finalProject$waterResource_analysis$theCompanyGetRelatedISOproof)"

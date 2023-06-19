@@ -7,6 +7,6 @@
 "0","finalProject$communication_analysis$Dispersion <- "
 "0","  head("
 "0","    finalProject$communication_analysis$dispersion_sort,"
-"0","    n = 5)"
+"0","    n = 4)"
 "0",""
 "0","View(finalProject$communication_analysis$Dispersion)"

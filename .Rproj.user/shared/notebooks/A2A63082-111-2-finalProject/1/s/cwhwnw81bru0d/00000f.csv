@@ -1,0 +1,4 @@
+"0","finalProject$waste_analysis$theCompanyGetRelatedISOproof <- "
+"0","  finalProject$waste_analysis$all[grep((""14001""),finalProject$waste_analysis$all$wasteManagement_proof),]"
+"0",""
+"0","View(finalProject$waste_analysis$theCompanyGetRelatedISOproof)"

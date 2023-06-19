@@ -15,7 +15,7 @@
 "0","finalProject$board_analysis$femalePercentage_sum <-"
 "0","  sum(as.numeric(finalProject$board_analysis$femalePercentage_count))"
 "0",""
-"0","finalProject$board_analysis$femaleOverall$Percentage <-"
+"0","finalProject$board_analysis$femaleOverall$percentage <-"
 "0","  sprintf("
 "0","    ""%.1f %%"", round(finalProject$board_analysis$femalePercentage_count /"
 "0","                       finalProject$board_analysis$femalePercentage_sum, digits = 2) *100"

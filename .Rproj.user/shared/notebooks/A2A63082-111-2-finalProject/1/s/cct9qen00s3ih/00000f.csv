@@ -1,6 +1,6 @@
 "0","finalProject$board_analysis$independentPercentage_category <- cut(finalProject$board_analysis$independent_director$percentage,"
 "0","      breaks = c(-Inf, 0.333, 0.499, Inf),"
-"0","      labels = c(""小於1/3"", ""未過半但過1/3"", ""過半數""))"
+"0","      labels = c(""小於1/3"", ""過1/3但未過半"", ""過半數""))"
 "0",""
 "0","finalProject$board_analysis$independentPercentage_count <-"
 "0","  table(finalProject$board_analysis$independentPercentage_category)"

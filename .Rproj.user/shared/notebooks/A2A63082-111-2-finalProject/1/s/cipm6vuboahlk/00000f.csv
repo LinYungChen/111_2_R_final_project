@@ -1,6 +1,0 @@
-"0","finalProject$board_analysis$independentHalf <- "
-"0","  finalProject$board_analysis$independent_director["
-"0","    finalProject$board_analysis$independent_director$percentage > 0.499, "
-"0","  ]"
-"0",""
-"0","View(finalProject$board_analysis$independentHalf)"
