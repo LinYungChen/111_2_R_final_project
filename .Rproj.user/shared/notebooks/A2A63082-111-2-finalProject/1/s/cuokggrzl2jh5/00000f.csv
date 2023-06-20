@@ -1,0 +1,4 @@
+"0","finalProject$energy_analysis$theCompanyGetRelatedISOproof <- "
+"0","  finalProject$energy_analysis$all[grep((""50001""),finalProject$energy_analysis$all$energyManagement_proof),]"
+"0",""
+"0","View(finalProject$energy_analysis$theCompanyGetRelatedISOproof)"

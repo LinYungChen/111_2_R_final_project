@@ -1,0 +1,32 @@
+{
+    "id": "72339425",
+    "path": "~/GitHub/111_2_R_final_project/111-2-finalProject.Rmd",
+    "project_path": "111-2-finalProject.Rmd",
+    "type": "r_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1684917926866.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "550,6",
+        "scrollLine": "543",
+        "rmdVisualMode": "false",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "108:0",
+        "docOutlineSize": "110"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1687161525,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1687270898459,
+    "read_only": false,
+    "read_only_alternatives": []
+}

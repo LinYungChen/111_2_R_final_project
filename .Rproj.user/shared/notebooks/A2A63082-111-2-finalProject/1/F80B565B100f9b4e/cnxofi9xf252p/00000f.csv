@@ -1,0 +1,8 @@
+"0","finalProject$communication_analysis$frequency_category <- "
+"0","  cut(finalProject$communication_analysis$all$frequency,"
+"0","      breaks = c(0, 1, 3.9, Inf),"
+"0","      labels = c(""僅召開1次"", ""召開2~3次"", ""召開4次以上""),"
+"0","      include.lowest = T)"
+"0",""
+"0","finalProject$communication_analysis$frequency_count <-"
+"0","  table(finalProject$communication_analysis$frequency_category)"
