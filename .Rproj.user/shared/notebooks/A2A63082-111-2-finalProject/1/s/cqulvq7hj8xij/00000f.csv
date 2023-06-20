@@ -1,4 +1,0 @@
-"0","finalProject$CO2_analysis$theCompanyGetRelatedISOproof <- "
-"0","  finalProject$CO2_analysis$all[grep((""14064""),finalProject$CO2_analysis$all$CO2emissionManagement_proof),]"
-"0",""
-"0","View(finalProject$CO2_analysis$theCompanyGetRelatedISOproof)"

@@ -3,7 +3,7 @@
     "path": "~/GitHub/111_2_R_final_project/111-2-finalProject.Rmd",
     "project_path": "111-2-finalProject.Rmd",
     "type": "r_markdown",
-    "hash": "0",
+    "hash": "203087185",
     "contents": "",
     "dirty": false,
     "created": 1684917926866.0,
@@ -22,11 +22,11 @@
         "docOutlineSize": "110"
     },
     "folds": "",
-    "lastKnownWriteTime": 1687161525,
+    "lastKnownWriteTime": 1687272897,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1687270898459,
+    "last_content_update": 1687272897108,
     "read_only": false,
     "read_only_alternatives": []
 }

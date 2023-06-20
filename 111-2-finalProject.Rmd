@@ -530,16 +530,6 @@ View(finalProject$energy_analysis$Dispersion)
 
 ```
 
-## The company Get the IOS_proof associated with energy resource management
-
-```{r}
-finalProject$energy_analysis$theCompanyGetRelatedISOproof <- 
-  finalProject$energy_analysis$all[grep(("50001"),finalProject$energy_analysis$all$energyManagement_proof),]
-
-View(finalProject$energy_analysis$theCompanyGetRelatedISOproof)
-```
-
-
 # Waste management analysis
 
 ## Get the columns I need, change its name
@@ -590,15 +580,6 @@ View(finalProject$waste_analysis$Dispersion)
 
 ```
 
-## The company Get the IOS_proof associated with waste resource management
-
-```{r}
-finalProject$waste_analysis$theCompanyGetRelatedISOproof <- 
-  finalProject$waste_analysis$all[grep(("14001"),finalProject$waste_analysis$all$wasteManagement_proof),]
-
-View(finalProject$waste_analysis$theCompanyGetRelatedISOproof)
-```
-
 # CO2 emission management analysis
 
 ## Get the columns I need, change its name
@@ -647,13 +628,3 @@ finalProject$CO2_analysis$Dispersion <-
 View(finalProject$CO2_analysis$Dispersion)
 
 ```
-
-## The company Get the IOS_proof associated with CO2 emission resource management
-
-```{r}
-finalProject$CO2_analysis$theCompanyGetRelatedISOproof <- 
-  finalProject$CO2_analysis$all[grep(("14064"),finalProject$CO2_analysis$all$CO2emissionManagement_proof),]
-
-View(finalProject$CO2_analysis$theCompanyGetRelatedISOproof)
-```
-
